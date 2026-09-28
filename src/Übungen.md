@@ -72,8 +72,8 @@ Reminder:
 ```
 function funktionsName (parameter, parameter=defaultWert){
   // Funktionsblock mit Logik
-
-  return;  // console.log() ist ein "Nebeneffekt", wir geben in dieser Aufgabe keinen Wert zurück
+           // console.log() für das Ergebnis
+  return;  // Wir geben in dieser Aufgabe keinen Wert zurück, sondern nur den "Nebeneffekt" console.log() in der Zeile darüber.
 
 }
 
