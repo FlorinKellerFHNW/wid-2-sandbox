@@ -113,22 +113,22 @@ Schreibe eine Funktion welche den grösseren von zwei Zahlenwerten zurückgibt. 
 
 
 ### Übung 5: Array-Methoden
-Für die Übung genügt es, den Code im Funktionsblock der App.js zu schreiben und dir den Array per console.log ausgeben zu lassen (`console.log(meinArray)`). Es müssen also keine HTML erzeugt werden.
+Für die Übung genügt es, den Code im Funktionsblock der App.js zu schreiben und dir den Array per console.log ausgeben zu lassen (`console.log(meinArray)`). Es muss also keine HTML erzeugt werden.
 
 Definiere zunächst einen Array, der mehrere Zahlen enthält.
 
 #### 5.1 map()
-Iteriere mit `.map()` über den Array und multpliziere jedes Element mit der Zahl 3. `map()` verändert deinen Ausgangsarray nicht, daher musst du das Ergebnis einer neuen Variablen zuweisen. Diese kannst du dir dann mit `console.log()` anzeigen lassen.
+Iteriere mit `.map()` über den Array und multpliziere jedes Element mit der Zahl 3. `map()` verändert deinen Ausgangsarray nicht, daher musst du das Ergebnis einer neuen Variablen zuweisen. Diese kannst du dir dann mit `console.log()` anzeigen lassen. Siehe das Beispiel unten.
 
-Was müsstest du ändern, damit jedes Element mit seinem Index, anstatt mit der Zahl 3 multipliziert wird? Probiere es aus und verände den Code entsprechend. 
+Was müsstest du ändern, damit jedes Element mit seinem Index, anstatt mit der Zahl 3 multipliziert wird? Probiere es aus und verändere den Code entsprechend. 
 
 Reminder:
 ```
 const userList = ["Tim", "Anna", "Admin"]
-userList.map( (user, index) => user)
+const users = userList.map( (user, index) => user + "-user") // verwendest du map um einen Array zu ändern, weise das Ergebnis immer einer neuen Variablen zu. Hier "users".
 
-// oder auch
-userList.map( (user, index) => { 
+// Wenn deine .map-Operation mehr Code bzw. Zeilen benötigt, verwende {}-Klammern hinter dem Pfeil und das Return-Statement, um das finale Ergebnis auszugeben.
+const users = userList.map( (user, index) => { 
   // ganz viel Code
   return user;
 })
@@ -137,15 +137,15 @@ userList.map( (user, index) => {
 
 #### 5.2 filter()
 Führe die folgenden Schritte aus:
-- Definiere einen Array mit fünf beliebigen Nutzernamen (Strings). 
-- Filter den Array mit `.filter()` und weise das Ergebnis einer neuen Variablen zu (`filter()` modifiziert den Ursprungsarray nicht). 
-- Innerhalb der runden Klammern wird eine Funktion erwartet - schreibe dort diese Arrow-Function: `username => username.includes("a")`.
+- Definiere einen Array mit fünf beliebigen Nutzernamen (Strings) und weise ihn einer Variablen zu (z.B. meinArray). 
+- Filter den Array mit `.filter()` und weise das Ergebnis einer neuen Variablen zu (`filter()` modifiziert den Ursprungsarray nicht. Wie bei .map() brauchst du also eine neue Variable, die das Ergebnis speichern soll). 
+- Innerhalb der runden Klammern wird eine Funktion erwartet - schreibe dort diese Arrow-Function: `username => username.includes("a")`. Sie sagt: Filter den Array und prüfe jedes Element (hier username genannt), ob es ein "a" enthält. Falls ja behalte das Element, falls nein, ignoriere es. 
 - Log den neuen Array mit `console.log()` - stimmt das Ergebnis?
 
 Erklärung:
 - includes() ist eine Methode auf einem String (dem jeweiligen Nutzernamen über den die Filter-Methode iteriert). Sie gibt true / false zurück.
 - Zeichenketten / Strings lassen sich als ein Array von einzelnen Zeichen begreifen. Viele Array-Methoden können auch für Strings genutzt werden (siehe die JS-Referenz zu String und Array Methoden)
-- Wir könnten `include()` auch mit einem ternären Operator in einer `map()`Funktion kombinieren, z.B. um alle Nutzer:innen mit "a" im Namen anders zu prozessieren, als die restlichen Nutzer:
+- Ausserdem könnten wir `include()` auch mit einem ternären Operator in einer `map()`Funktion kombinieren, z.B. um alle Nutzer:innen mit "admin" im Namen anders zu prozessieren, als die restlichen Nutzer:
 
 `userList.map(username => username.includes("admin") ? grantAdminRights() : grantUserRights())`
 
