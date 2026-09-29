@@ -22,6 +22,10 @@ Reminder:
   }
 
 ```
+Die Übung soll dir zeigen:
+- Das Python und JavaScript (und alle anderen Programmiersprachen) ähnliche Konstrukte nutzen - z.B. Bedingungen (if) aber auch Schleifen (while, for...) oder Funktionen. Diese können ggf. anders benannt sein und sich im Detail unterscheiden.
+- Das Python und JavaScript zwar unterschiedliche Syntax (=Schreibweise) nutzen, die Unterschiede aber einem festen Muster folgen. Einrückungen in Python sind {}-Klammern in JavaScript. Dort wo Python den Doppelpunkt nutzt (z.B. if...:, for...:) verwendet JavaScript ()-Klammern hinter dem Schlüsselwort (z.B. if(...), for(...)).
+- Das es in JS kein "elif" gibt. Man spart sich ein drittes Schlüsselwort (neben if und else).  
 
 ---
 
