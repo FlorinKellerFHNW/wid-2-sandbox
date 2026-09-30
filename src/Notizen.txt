@@ -1,0 +1,6 @@
+    <div>
+      <div>Hallo Welt {a}</div>
+      <div>{user === "admin" ? "isAdmin" : "isNotAdmin"}</div>
+      <div style={{backgroundColor: user === "admin" ? "blue" : "red"}}>Usergroup</div>
+
+    </div>
