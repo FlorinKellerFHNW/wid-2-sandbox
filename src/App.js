@@ -1,109 +1,77 @@
 export default function App() {
-  /*
-   *
-   *    JAVASCRIPT hier
-   *
-   */
-
-  console.log("Test");
-
-  const a = "Test"; // var (alte Syntax), let (lokale Variblen), const (Konstante) -> verwenden!
-
-  if (a === "Test") {
-    console.log("a ist gleich Test");
-  } else {
-    console.log("a ist nicht gleich Test");
-  }
-
-  const wert = 42;
-  console.log(typeof wert);
-
-if (typeof wert === "number") {
-  console.log("wert ist eine Zahl");
-} else if (typeof wert === "string") {
-  console.log("wert ist ein String");
-} else if (typeof wert === "boolean") {
-  console.log("wert ist ein Boolean");
-} else if (wert === null) {
-  console.log("wert ist null");
-} else if (typeof wert === "undefined") {
-  console.log("wert ist undefined");
-} else {
-  console.log("unbekannter Typ: " + typeof wert);
+// JavaScript hier
+// Übung 1
+const variable = undefined;
+if (typeof variable === "number") {
+  console.log("Datentyp ist eine Zahl");
+} else if (typeof variable === "string") {
+  console.log("Datentyp ist ein String");
+} else if (typeof variable === "boolean") {
+  console.log("Datentyp ist ein Boolean");
+} else if (typeof variable === null) {
+  console.log("Datentyp ist null");
 }
 
+// Übung 2
+const isTheTruth = true; //mit False testen
 
-const isTheTruth = true;
-
-function logger(x, y, z = "_3") {
-  const result = "Funktion!" + x + y + z;
-  console.log(result);
-  return result;
-}
-
-logger("_1", "_2");
-
+// Übung 3
 function multiply(a, b = 2) {
-  if(typeof a!== "number" || typeof b !== "number") {
-    console.log("Fehler: Beide Parameter müssen Zahlen sein.");
+  if (typeof a !== "number" || typeof b !== "number") {
+    console.log("Fehler: beide Parameter müssen Zahlen sein.");
     return;
   }
   console.log(a * b);
   return;
 }
+multiply(5);
+multiply(5, 3);
 
-multiply(3);
-multiply(3, 4);
-multiply("x", 4); // Fehler: Beide Parameter müssen Zahlen sein.
-multiply(3, "y"); // Fehler: Beide Parameter müssen Zahlen sein.
-multiply(3, undefined); // Fehler: Beide Parameter müssen Zahlen sein.
+// Übung 4
+const joinWithSpace = (wordone, wordtwo) => `${wordone} ${wordtwo}`;
+console.log(joinWithSpace("Hallo", "Welt"));
 
+const compareToZero = (number) => {
+  if (number < 0) {
+    return "negativ";
+  } else if (number > 0) {
+    return "positiv";
+  } else {
+    return "null";
+  }
+};
+console.log(compareToZero(-5));
+console.log(compareToZero(5));
+console.log(compareToZero(0));
 
-// Array = Liste von Elementen / Werten
-// Array = geordnet
-// Array = Elment werden ¨ber ihren Index gefunden
-const array = [1, 2, 3, "vier", false, [], undefined, "letztes Element"];
-//const element = array[array.length - 1];
-//console.log(array.length);
+const max = (a, b) => (a > b ? a : b);
+console.log(max(3, 8));
+console.log(max(9, 2));
+console.log(max(4, 4));
 
-const users = ["Florin", "Matteo", "Dario", "Admin"];
-const usersTransformed = users.map(user => user + "_user");
-console.log(users);
-console.log(usersTransformed);
+// Übung 5
+const zahlen = [1, 2, 3, 4, 5];
+const malDrei = zahlen.map((zahl) => zahl * 3);
+console.log(zahlen);
+console.log(malDrei);
 
-const filteredUsers = users.filter(user => user !== "Admin");
-console.log(filteredUsers);
+const malIndex = zahlen.map((zahl, index) => zahl * index);
+console.log(malIndex);
 
+const nutzer = ["Tim", "Anna", "Max", "Admin", "Sara"];
+const mitA = nutzer.filter((username) => username.includes("a"));
+console.log(mitA);
+console.log(nutzer);
 
-// Objekt = Liste von Schlüssel-Wert-Paaren
-// Objekt = nicht geordnet
-// Objekt = Werte werden über Schlüssel identifiziert
-const object = {
-  meinString: "User",
-  meineNumber: 11, 
-  meinArray: [1, 2, 3],
-  meinObject: {} 
-}
 
 
   return (
-    /*
-     *
-     *    HTML hier
-     *    + JavaScript in {} möglich
-     *
-     */
+// HTML + JavaScript mit {} hier
     <div>
-      <p style={{ color: isTheTruth ? "green" : "red" }}>
-      Dieser Satz ändert seine Farbe.
-      </p>
-      <div>{array}</div>
-      {users.map(user => <li>{user}</li>)}
-      <div>{object.meinString}</div>
-      <div>{object["meineNumber"]}</div>
+      <p style={{ color: isTheTruth ? "green" : "red"}}>Dieser Satz ist wahr.</p>
+
+
+
     </div>
-    /*
-     *
-     */
   );
 }
